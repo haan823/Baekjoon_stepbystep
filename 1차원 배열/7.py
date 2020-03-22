@@ -4,17 +4,15 @@ avg = []
 for i in range(c):
     l.append(list(map(int, input().split())))
 for i, v1 in enumerate(l):
-    sum = 0
-    len = 0
+    s = 0
+    length = 0
     for j, v2 in enumerate(l[i]):
         if j == 0:
             continue
         else:
-            sum += v2
-            len += 1
-    avg.append(sum / len)
-print(l)
-print(avg)
+            s += v2
+            length += 1
+    avg.append(s / length)
 for i, v1 in enumerate(l):
     count = 0
     for j, v2 in enumerate(l[i]):
@@ -23,5 +21,5 @@ for i, v1 in enumerate(l):
         else:
             if v2 > avg[i]:
                 count += 1
-    print(count)
-    print(len(l[i]))
+    print("%.3f" % round(((count / (len(l[i]) - 1)) * 100), 3), end="")
+    print("%")
